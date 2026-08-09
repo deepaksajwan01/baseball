@@ -8,7 +8,7 @@ import React from 'react'
 export default function Toolbar({ isPlaying, onTogglePlay }) {
   return (
     <div className="header">
-      <h1 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>3D Batter Animation Director</h1>
+      {/* <h1 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>3D Batter Animation Director</h1> */}
       <button
         onClick={onTogglePlay}
         style={{
@@ -24,7 +24,7 @@ export default function Toolbar({ isPlaying, onTogglePlay }) {
           transition: 'all 0.2s'
         }}
       >
-        {isPlaying ? '⏹ Stop Animation' : '🏏 Swing / Play Animation'}
+        {isPlaying ? 'Stop Animation' : 'Play Animation'}
       </button>
     </div>
   )
