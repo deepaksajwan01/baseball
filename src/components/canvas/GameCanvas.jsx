@@ -7,17 +7,16 @@ import PitcherModel from './PitcherModel'
 /**
  * GameCanvas Component
  * 
- * Interactive Broadcast Baseball Match View:
- * - Default Camera Position: [3.51, -2.04, 6.33]
- * - Default Target: [0.30, -0.20, -1.20]
- * - OrbitControls enabled for interactive mouse/touch navigation
+ * Sets up 3D Viewport with Classic Baseball Turf Green (#15803d) background,
+ * stadium lighting, and 3D Player Models.
  */
 export default function GameCanvas({ isPlaying }) {
   const controlsRef = useRef()
 
   return (
     <Canvas camera={{ position: [3.51, -2.04, 6.33], fov: 48 }}>
-      <color attach="background" args={['#649844']} />
+      {/* Classic Baseball Turf Green Background */}
+      <color attach="background" args={['#15803d']} />
 
       {/* Lighting */}
       <ambientLight intensity={1.2} />
@@ -29,7 +28,7 @@ export default function GameCanvas({ isPlaying }) {
         <BatterModel isPlaying={isPlaying} />
       </Suspense>
 
-      {/* Interactive OrbitControls enabled */}
+      {/* Interactive OrbitControls */}
       <OrbitControls ref={controlsRef} makeDefault target={[0.3, -0.2, -1.2]} />
     </Canvas>
   )
