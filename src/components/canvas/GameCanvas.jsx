@@ -15,7 +15,7 @@ import BatterModel from './BatterModel'
 export default function GameCanvas({ isPlaying }) {
   return (
     <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
-      <color attach="background" args={['#479a3eff']} />
+      <color attach="background" args={['#649844']} />
 
       {/* Lighting */}
       <ambientLight intensity={1.2} />
