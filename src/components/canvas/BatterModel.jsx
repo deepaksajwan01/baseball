@@ -6,6 +6,7 @@ import { useGLTF, useAnimations, Center } from '@react-three/drei'
  * 
  * - Loads 'batter.glb' model & baked animations.
  * - Fits the model bounding box using <Center>.
+ * - Default initial rotation set to 90 degrees (Math.PI / 2) so batter faces side view.
  * - Controls animation playback based on `isPlaying` prop.
  */
 export default function BatterModel({ isPlaying }) {
@@ -42,10 +43,11 @@ export default function BatterModel({ isPlaying }) {
   }, [isPlaying, actions, names])
 
   return (
-    <group ref={groupRef}>
+    /* Initial static rotation set to Math.PI / 2 (90 degrees) */
+    <group ref={groupRef} rotation={[0, -Math.PI / 2, 0]}>
       <Center>
         {/* Scaled down to 0.006 to fit Mixamo centimeter export scale */}
-        <primitive object={scene} scale={[0.006, 0.006, 0.006]} />
+        <primitive object={scene} scale={[0.01, 0.01, 0.01]} />
       </Center>
     </group>
   )

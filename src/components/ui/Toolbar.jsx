@@ -3,7 +3,7 @@ import React from 'react'
 /**
  * Toolbar Component
  * 
- * Renders UI header overlay and interactive action buttons.
+ * Renders UI header overlay and interactive action button for play animation.
  */
 export default function Toolbar({ isPlaying, onTogglePlay }) {
   return (
